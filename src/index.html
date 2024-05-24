@@ -41,7 +41,7 @@
         <script>
             async function lineLogin() {
                 try {
-                    await liff.init({ liffId: "2005259383-MomzEep7" });
+                    await liff.init({ liffId: "2005259383-MomzEep7",withLoginOnExternalBrowser : true });
                     if (!liff.isLoggedIn()) {
                         liff.login();
                     }
@@ -67,7 +67,7 @@
                     message: responseString
                 };
 
-                axios.post('http://localhost:8888/send-message', payload)
+                axios.post('https://a1f0-202-29-145-56.ngrok-free.app/send-message', payload)
                     .then(response => console.log(response.data))
                     .catch(error => console.error('Error:', error));
             }
